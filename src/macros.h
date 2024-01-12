@@ -1,0 +1,1 @@
+#define HEADER(name) <head><title>name</title></head>
