@@ -10,24 +10,5 @@ body {
     background-color: rgb(0, 10, 40);
     font-family: sans-serif;
     font-size: 11px;
-}
-p {
     color: rgb(200, 200, 180);
-}
-#but-why {
-    color: red;
-}
-.list {
-    color: rgb(200, 200, 180);
-}
-a {
-    color:aliceblue;
-}
-.text1 {
-    color: rgb(200, 200, 180);
-    font-weight: bolder;
-}
-.code1 {
-    color: rgb(200, 200, 180);
-    font-family: monospace;
 }
