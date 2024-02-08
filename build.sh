@@ -6,8 +6,8 @@
 # cd into the source directory
 cd src/
 for file in *.html; do
-    # Put it through grep to removes the things at the top of the file that the preprocessor emits.
-    gcc -x c -E $file | grep -v -E "^#" > ../docs/$file
+    # put it through the m4 macros
+    m4 -Dfile=$file rules.m4 > ../docs/$file
 done
 
 # copy over images

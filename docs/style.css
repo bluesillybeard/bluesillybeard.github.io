@@ -12,3 +12,11 @@ body {
     font-size: 11px;
     color: rgb(200, 200, 180);
 }
+.title-header {
+    width:max-content;
+    height:min-content;
+    border: solid;
+    padding:10pt;
+    margin:100pt;
+    display: block;
+}

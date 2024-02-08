@@ -1,4 +1,5 @@
 # Things to do
 
-- replace the C preprocessor with an actually half decent static site generator
-    - or at least some kind of macro system that isn't so limited and awful
+- Create a preprocessor that is actually decent
+    - I tried the C preprocessor, but it SUCKS
+    - all I really need are basic macros and includes
