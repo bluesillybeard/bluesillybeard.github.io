@@ -1,3 +1,4 @@
+dnl macro for reducing boilerplate code in my html
 define(`HEAD', `
 <head>
     <meta charset="utf-8">
@@ -5,8 +6,11 @@ define(`HEAD', `
     <link rel="stylesheet" href="style.css">
 </head>
 ') dnl
-dnl m4 is honestly wild. How is this not more popular?
-dnl Genuinely, m4 might actually be one of my favorite things, and I learned about it only today.
-dnl cat the file into this, because m4 has no built-in way to include files
+dnl I know 'dnl' is not the best way to write comments but I don't particularly care.
 
+dnl This macro makes including files easier. It probably is already a thing in m4 but whatever I don't care
+define(`incfile', `esyscmd(cat $1)')
+
+dnl cat the file into this, because m4 has no built-in way to include files
+dnl OK maybe it does, but I literally learned m4 yesterday as of writing this so yeah
 esyscmd(cat file)
