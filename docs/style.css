@@ -1,8 +1,61 @@
 .topbar {
     display: flex;
-    width: 100vw;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: min-content;
+    margin: 0;
+    background-color: black;
+}
+.bar-item {
+    border-width: 2pt;
+    border-radius: 0;
+    border-color: white;
+    border-style: solid;;
+    margin: 0;
+    padding: 0;
+}
+.logo {
+    padding: 5pt;
 }
 .theme-select {
+    padding: 5pt;
+}
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 12pt;
+    background: black;
+    color: white;
+}
+.content {
+    margin: 10pt;
     display: flex;
-    align-content: end;
+    flex-direction: column;
+}
+.page {
+    width: 400pt;
+    align-self: center;
+}
+button {
+    background-color: transparent;
+    padding: 5pt;
+    margin: 0;
+    border: none;
+    height: 100%;
+    color:inherit;
+    font-size: inherit;
+}
+button:hover {
+    background-color: #7777FF77;
+}
+.topbar-fill {
+    flex-grow: 1;
+}
+a {
+    color: aqua;
+}
+a:visited {
+    color: violet
 }
