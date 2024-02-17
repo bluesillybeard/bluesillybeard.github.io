@@ -1,3 +1,17 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 12pt;
+
+    --theme-color: white;
+    --theme-background-color: black;
+    background-color: var(--theme-background-color);
+    color: var(--theme-color);
+}
+body[theme = "light"] {
+    --theme-color: black;
+    --theme-background-color: white;
+}
 .topbar {
     display: flex;
     position: sticky;
@@ -6,29 +20,24 @@
     right: 0;
     height: min-content;
     margin: 0;
-    background-color: black;
+    background-color: var(--theme-background-color);
+    color: var(--theme-color);
     font-size: 15pt;
 }
 .bar-item {
     border-width: 2pt;
     border-radius: 0;
-    border-color: white;
+    border-color: var(--theme-color);
     border-style: solid;;
     margin: 0;
     padding: 0;
+    color: inherit;
 }
 .logo {
     padding: 5pt;
 }
 .theme-select {
     padding: 5pt;
-}
-body {
-    padding: 0;
-    margin: 0;
-    font-size: 12pt;
-    background: black;
-    color: white;
 }
 .content {
     margin: 10pt;
@@ -39,24 +48,37 @@ body {
     width: 600pt;
     align-self: center;
 }
-button {
-    background-color: transparent;
-    padding: 5pt;
-    margin: 0;
-    border: none;
-    height: 100%;
-    color:inherit;
-    font-size: inherit;
-}
-button:hover {
-    background-color: #7777FF77;
-}
 .topbar-fill {
     flex-grow: 1;
 }
-a {
-    color: aqua;
+.about {
+    padding: 5pt;
+    margin: 0;
+    height: 100%;
+    font-size: inherit;
+    text-decoration: none;
 }
-a:visited {
-    color: violet
+.about:hover {
+    background-color: var(--theme-color);
+    color: var(--theme-background-color);
+}
+.about:focus {
+    border-color: #0083fd;
+}
+.home {
+    padding: 5pt;
+    margin: 0;
+    height: 100%;
+    font-size: inherit;
+    text-decoration: none;
+}
+.home:hover {
+    background-color: var(--theme-color);
+    color: var(--theme-background-color);
+}
+.home:focus {
+    border-color: #168fff;
+}
+.theme-select-input {
+    font-size: 40pt;
 }

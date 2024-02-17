@@ -4,20 +4,53 @@ dnl although HTML is extremely forgiving and this would probably render fine by 
 dnl Also yes, these are m4 comments in an html file. Deal with it.
 dnl vscode can still figure out what's going on, somehow, so i'm all good!
 
-dnl TODO: This is where a logo would go
 <div class="topbar">
+    dnl TODO: This is where a logo would go
     <div class="logo bar-item">[LOGO]</div>
-    <div class="home bar-item">
-        <a href="index.html">
-            <button>Home</button>
-        </a>
+    <a href="index.html" class="home bar-item">
+        Home
+    </a>
+    <a href="about.html" class="about bar-item">
+        About
+    </a>
+    <div class="theme-select bar-item">
+        <input type="checkbox" class="theme-select-input">
+        <label for="theme-select-input">Light theme</label>
     </div>
-    <div class="about bar-item">
-        <a href="about.html">
-            <button>About</button>
-        </a>
-    </div>
-    dnl TODO: figure out how to do a pure CSS selection thing for changing between different themes
-    <div class="theme-select bar-item">[THEME SELECTOR]</div>
     <div class="topbar-fill bar-item"></div>
 </div>
+
+<script>
+    function themeSwitchActivated(e) {
+        if(e.currentTarget.checked === true) {
+            // Add item to localstorage
+            localStorage.setItem('theme', 'light');
+            setTheme('light');
+        } else {
+            // Remove item if theme is switched back to normal
+            localStorage.removeItem('theme');
+            setTheme('dark');
+        }
+    }
+
+    function setTheme(theme) {
+        // Maybe this isn't the best way transfer JS variables into CSS, but I don't really care.
+        // As long as it works, I'm going with it because I am an absolute noob at web dev.
+        document.body.setAttribute("theme", theme);
+    }
+
+    const themeSwitches = document.getElementsByClassName('theme-select-input');
+    for(let i = 0; i<themeSwitches.length; ++i) {
+        const otherThemeSwitch = themeSwitches.item(i);
+        otherThemeSwitch.checked = localStorage.getItem('theme') === 'light';
+        otherThemeSwitch.addEventListener('change', themeSwitchActivated);
+    }
+
+    const themeSwitchChecked = themeSwitches.item(0).checked;
+    if(themeSwitchChecked == true) {
+        setTheme('light');
+    } else {
+        setTheme('dark');
+    }
+
+</script>
