@@ -1,5 +1,6 @@
 # Things to do
 
-- Create a preprocessor that is actually decent
-    - I tried the C preprocessor, but it SUCKS
-    - all I really need are basic macros and includes
+- set up blog
+    - automatically generate blog index?
+- set up resume
+- It might be worth automatically converting markdown files into HTML so writing posts is easier

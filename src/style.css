@@ -12,6 +12,12 @@ body[theme = "light"] {
     --theme-color: black;
     --theme-background-color: white;
 }
+a {
+    color:#59afff
+}
+a:visited {
+    color: #ce85ff;
+}
 .topbar {
     display: flex;
     position: sticky;
@@ -51,33 +57,19 @@ body[theme = "light"] {
 .topbar-fill {
     flex-grow: 1;
 }
-.about {
+.linkbutton {
     padding: 5pt;
     margin: 0;
     height: 100%;
     font-size: inherit;
     text-decoration: none;
 }
-.about:hover {
+.linkbutton:hover {
     background-color: var(--theme-color);
     color: var(--theme-background-color);
 }
-.about:focus {
+.linkbutton:focus {
     border-color: #0083fd;
-}
-.home {
-    padding: 5pt;
-    margin: 0;
-    height: 100%;
-    font-size: inherit;
-    text-decoration: none;
-}
-.home:hover {
-    background-color: var(--theme-color);
-    color: var(--theme-background-color);
-}
-.home:focus {
-    border-color: #168fff;
 }
 .theme-select-input {
     font-size: 40pt;
