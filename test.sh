@@ -1,7 +1,5 @@
-name="ruby"
+#!/bin/bash
 
-if [[ $name == *by ]] # * is used for pattern matching
-then
-  echo "true";
-else
-  echo "false"; fi
+# This compiles the site for local testing. DO NOT COMMIT after running this file! Make sure to run build.sh before commiting.
+
+./compile.sh -DHOSTSITE="$(realpath ./)/docs"

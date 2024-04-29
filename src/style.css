@@ -74,3 +74,6 @@ a:visited {
 .theme-select-input {
     font-size: 40pt;
 }
+.code {
+    font-family: monospace;
+}

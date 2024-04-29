@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+
+<html>
+    HEAD(How Blue's Website Works | Blog)
+
+    <body>
+        incfile(`topbar.inc.html')
+        <div class="content">
+            <div class="page">
+                
+                <h1 class="title-header">How my website works</h1><br>
+                It's simple really: a bunch of html files are processed with M4 macros and published to github pages! What, you want more detail? Fine.<br>
+                <br>
+                <h2 class="sub-header">Who is this article for?</h2><br>
+                This article is intended for a general audience. <br>
+                <h2 class="sub-header">Step one: Hosting</h2><br>
+                There are a million ways to host a website. Things like Wix and Squarespace exist as a combination of easy-to-use website builder and host.
+                They provide all kinds of useful functionality, such as templates, themes, paid content, etc. I did not use one of those, for a few reasons:<br>
+                <ul>
+                    <li>They often require payment</li>
+                    <li>If they vanish for some reason, my website vanishes with it</li>
+                    <li>Perhaps most importantly, It's more fun to do it manually anyway</li>
+                </ul>
+                <br>
+                Instead, I use a simple static website hosting service: Github Pages. Github Pages is mainly for software projects to host their own basic website,
+                but nothing is stopping anyone from hosting a website with whatever content they want. There isn't any control over the server-side - so 
+                no fancy features like accounts or comments - but it works great for hosting basic web pages.<br>
+                <br>
+                Setting up on Github Pages is simple, and there are a million tutorials about it. I just have to put a bunch of HTML files in a folder, and I can just upload it.
+                It was really quite simple to get it set up, and in mere minutes I had a website up and running! But, it looked a little something like this:<br>
+                
+                dnl TODO: Make this width:100% apply to all images of a certain classs
+
+                <img src="blank.png" style="width:100%"> <br>
+                <br>
+                Yeah, not exactly presentable. 
+                <h2 class="sub-header">Step Two: making the actual website</h2><br>
+                To make writing HTML code a little easier, it's common to use a build step. In my case, that build step takes the shape of a macro processor.
+                A macro processor is something that takes a text file, and processes it. It's almost its own programming language, but instead of code that
+                runs step-by-step, it's code that takes a text file (in my case, HTML code) and does a fancy version of find and replace.
+                M4 is a macro processor that is widely available, and relatively simple to use. Here is a simplified version of the code used to build this website:
+                <pre class="code">
+    `define'(`&#96;HEAD'', &#96;
+    &lt;head&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;title>$1&lt;/title&gt;
+        &lt;link rel="stylesheet" href="`HOSTSITE'()/style.css"&gt;
+        &lt;/head&gt;
+    ') dnl
+
+    `esyscmd'(cat `file')
+                </pre>
+                Let's dig through what this means, line by line.
+
+                "`define'(&#96;HEAD')" tells m4 to create a macro called "HEAD"
+            </div>
+        </div>
+    </body>
+</html>
