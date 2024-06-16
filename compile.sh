@@ -2,6 +2,7 @@
 
 # This compiles the website.
 # Arguments to this file are passed into m4.
+# Not meant to be run directly, see build.sh and test.sh for usage examples if you're adding this to a script.
 
 rm -rf docs/*
 
