@@ -5,19 +5,27 @@ body {
 
     --theme-color: white;
     --theme-background-color: black;
+    --theme-box-color: rgb(32, 32, 32);
+    --theme-box-outline: rgb(64, 64, 64);
     background-color: var(--theme-background-color);
     color: var(--theme-color);
 }
-body[theme = "light"] {
+
+body[theme="light"] {
     --theme-color: black;
     --theme-background-color: white;
+    --theme-box-color: rgb(190, 190, 190);
+    --theme-box-outline: rgb(179, 179, 179);
 }
+
 a {
-    color:#59afff
+    color: #59afff
 }
+
 a:visited {
     color: #ce85ff;
 }
+
 .topbar {
     display: flex;
     position: sticky;
@@ -30,33 +38,41 @@ a:visited {
     color: var(--theme-color);
     font-size: 15pt;
 }
+
 .bar-item {
     border-width: 2pt;
     border-radius: 0;
     border-color: var(--theme-color);
-    border-style: solid;;
+    border-style: solid;
+    ;
     margin: 0;
     padding: 0;
     color: inherit;
 }
+
 .logo {
     padding: 5pt;
 }
+
 .theme-select {
     padding: 5pt;
 }
+
 .content {
     margin: 10pt;
     display: flex;
     flex-direction: column;
 }
+
 .page {
     width: 600pt;
     align-self: center;
 }
+
 .topbar-fill {
     flex-grow: 1;
 }
+
 .linkbutton {
     padding: 5pt;
     margin: 0;
@@ -64,16 +80,33 @@ a:visited {
     font-size: inherit;
     text-decoration: none;
 }
+
 .linkbutton:hover {
     background-color: var(--theme-color);
     color: var(--theme-background-color);
 }
+
 .linkbutton:focus {
     border-color: #0083fd;
 }
+
 .theme-select-input {
     font-size: 40pt;
 }
+
 .code {
     font-family: monospace;
+    margin-top: 0;
+    margin-top: 0;
+}
+
+.box {
+    margin: 2ch;
+    width: min-content;
+    height: min-content;
+    background-color: var(--theme-box-color);
+    background-size: contain;
+    border: solid 2pt;
+    border-color: var(--theme-box-outline);
+    padding: 2ch;
 }

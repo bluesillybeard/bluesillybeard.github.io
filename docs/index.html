@@ -1,11 +1,10 @@
  
 
 
-
 <!DOCTYPE html>
 
 <html>
-    
+
 <head>
     <meta charset="utf-8">
     <title>Blue's Website</title>
@@ -13,8 +12,8 @@
 </head>
 
 
-    <body>
-        
+<body>
+    
 
 <div class="topbar">
         <div class="logo bar-item">[LOGO]</div>
@@ -30,7 +29,7 @@
 
 <script>
     function themeSwitchActivated(e) {
-        if(e.currentTarget.checked === true) {
+        if (e.currentTarget.checked === true) {
             // Add item to localstorage
             localStorage.setItem('theme', 'light');
             setTheme('light');
@@ -48,39 +47,39 @@
     }
 
     const themeSwitches = document.getElementsByClassName('theme-select-input');
-    for(let i = 0; i<themeSwitches.length; ++i) {
+    for (let i = 0; i < themeSwitches.length; ++i) {
         const otherThemeSwitch = themeSwitches.item(i);
         otherThemeSwitch.checked = localStorage.getItem('theme') === 'light';
         otherThemeSwitch.addEventListener('change', themeSwitchActivated);
     }
 
     const themeSwitchChecked = themeSwitches.item(0).checked;
-    if(themeSwitchChecked == true) {
+    if (themeSwitchChecked == true) {
         setTheme('light');
     } else {
         setTheme('dark');
     }
 
 </script>
-        <div class="content">
-            <div class="page">
-                <h1 class="title-header">About Blue</h1><br>
-                Heyo! I'm Blue Silly Beard, but you can call me Blue.<br>
-                <br>
-                Check out:
-                <ul>
-                    <li><a href="./blogs.html">Blogs</a></li>
-                    <li><a href="https://www.linkedin.com/in/hayden-rasmussen-06125b287">LinkedIn</a></li>
-                    <li><a href="https://github.com/bluesillybeard">Github</a></li>
-                    <li><a href="https://www.youtube.com/@bluesillybeard">Youtube Channel</a></li>
-                    <li><a href="https://www.youtube.com/@bluebeard5447">Other Youtube Channel</a></li>
-                    <li><a href="https://www.curseforge.com/members/bluesillybeard/projects">CurseForge</a></li>
-                    <li><a href="https://www.planetminecraft.com/member/bluesillybeard/">Planet Minecraft</a></li>
-                    <li><a href="https://discord.gg/DMargAA4Rv">Discord server</a></li>
-                    <li><a href="mailto:bluesillybeard2@gmail.com">Email me (bluesillybeard2@gmail.com)</a></li>
-                </ul>
-            </div>
+    <div class="content">
+        <div class="page">
+            <h1 class="title-header">About Blue</h1><br>
+            Heyo! I'm Blue Silly Beard, but you can call me Blue.<br>
+            <br>
+            Check out:
+            <ul>
+                <li><a href="./blogs.html">Blogs</a></li>
+                <li><a href="https://www.linkedin.com/in/hayden-rasmussen-06125b287">LinkedIn</a></li>
+                <li><a href="https://github.com/bluesillybeard">Github</a></li>
+                <li><a href="https://www.youtube.com/@bluesillybeard">Youtube Channel</a></li>
+                <li><a href="https://www.youtube.com/@bluebeard5447">Other Youtube Channel</a></li>
+                <li><a href="https://www.curseforge.com/members/bluesillybeard/projects">CurseForge</a></li>
+                <li><a href="https://www.planetminecraft.com/member/bluesillybeard/">Planet Minecraft</a></li>
+                <li><a href="https://discord.gg/DMargAA4Rv">Discord server</a></li>
+                <li><a href="mailto:bluesillybeard2@gmail.com">Email me (bluesillybeard2@gmail.com)</a></li>
+            </ul>
         </div>
-    </body>
-</html>
+    </div>
+</body>
 
+</html>

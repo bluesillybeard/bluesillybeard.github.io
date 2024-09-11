@@ -14,7 +14,8 @@ for file in $(find -type f); do
     if [[ $file == *\.inc\.html ]]; then continue;
     elif [[ $file == *\.html ]]; then
         # If it is an HTML file, put it through the m4 macros into the docs directory
-        m4 -Dfile=$file $@ rules.m4 > ../docs/$file
+        mkdir -p "../docs/$(dirname $file)"
+        m4 -D___file=$file $@ rules.m4 > ../docs/$file
     else
         # For anything else, just copy it over
         mkdir -p "../docs/$(dirname $file)"

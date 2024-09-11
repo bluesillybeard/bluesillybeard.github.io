@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+___HEAD(Test1 | Blog)
+
+<body>
+    ___incfile(`topbar.inc.html')
+    <div class="content">
+        <div class="page">
+            Note: this page is not really meant to be read - it was more of a test for before I start making actual
+            blogs.
+
+            <h1 class="title-header">A test</h1><br>
+            Short pararaph<br>
+            <br>
+            <h2 class="sub-header">Sub header</h2><br>
+            This is a longer paragraph, because it needs to be long. I like long paragraphs. They are pretty cool. Long
+            paragraphs are really what makes
+            these things fun.<br>
+            Anyway, here is a list: <br>
+            <ul>
+                <li>List item</li>
+                <li>Other List item</li>
+                <li>Perhaps most importantly, It's more fun to do it manually anyway</li>
+            </ul>
+            <br>
+            <br>
+
+            <div style="border: solid">
+
+                dnl this is probably the worst way to make a big empty box... I don't care.
+                <br><br><br><br><br><br><br><br><br><br><br>
+            </div>
+            <br>
+            Yeah, not exactly presentable.
+            Some code:
+            <div class="box">
+                <pre class="code">
+`define'(`&#96;HEAD'', &#96;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title>$1&lt;/title&gt;
+    &lt;link rel="stylesheet" href="`HOSTSITE'()/style.css"&gt;
+    &lt;/head&gt;
+') dnl
+
+    `esyscmd'(cat `file')</pre>
+            </div>
+            Let's dig through what this means, line by line.<br>
+
+            "`define'(&#96;HEAD')" tells m4 to create a macro called "HEAD"
+        </div>
+    </div>
+</body>
+
+</html>

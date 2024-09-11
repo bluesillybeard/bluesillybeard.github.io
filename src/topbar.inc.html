@@ -1,4 +1,4 @@
-dnl This is an include file. It is technically not a 'proper' html file, 
+dnl This is an include file. It is technically not a 'proper' html file,
 dnl although HTML is extremely forgiving and this would probably render fine by itself
 
 dnl Also yes, these are m4 comments in an html file. Deal with it.
@@ -7,7 +7,7 @@ dnl vscode can still figure out what's going on, somehow, so i'm all good!
 <div class="topbar">
     dnl TODO: This is where a logo would go
     <div class="logo bar-item">[LOGO]</div>
-    <a href="HOSTSITE()/index.html" class="linkbutton bar-item">
+    <a href="___HOSTSITE()/index.html" class="linkbutton bar-item">
         Home
     </a>
     <div class="theme-select bar-item">
@@ -19,7 +19,7 @@ dnl vscode can still figure out what's going on, somehow, so i'm all good!
 
 <script>
     function themeSwitchActivated(e) {
-        if(e.currentTarget.checked === true) {
+        if (e.currentTarget.checked === true) {
             // Add item to localstorage
             localStorage.setItem('theme', 'light');
             setTheme('light');
@@ -37,14 +37,14 @@ dnl vscode can still figure out what's going on, somehow, so i'm all good!
     }
 
     const themeSwitches = document.getElementsByClassName('theme-select-input');
-    for(let i = 0; i<themeSwitches.length; ++i) {
+    for (let i = 0; i < themeSwitches.length; ++i) {
         const otherThemeSwitch = themeSwitches.item(i);
         otherThemeSwitch.checked = localStorage.getItem('theme') === 'light';
         otherThemeSwitch.addEventListener('change', themeSwitchActivated);
     }
 
     const themeSwitchChecked = themeSwitches.item(0).checked;
-    if(themeSwitchChecked == true) {
+    if (themeSwitchChecked == true) {
         setTheme('light');
     } else {
         setTheme('dark');

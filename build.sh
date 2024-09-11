@@ -2,4 +2,4 @@
 
 # This compiles the site for distribution
 
-./compile.sh -DHOSTSITE=https://bluesillybeard.github.io
+./compile.sh -D___HOSTSITE=https://bluesillybeard.github.io
