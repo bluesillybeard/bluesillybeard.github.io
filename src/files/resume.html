@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Resume.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" href="file:///home/bluesillybeard/Documents/style.css" type="text/css">
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<div style="font-size:10pt">
+<div style="border: solid;">
+<h3>
+<p style="text-align:center">
+<strong>Hayden Yorick Rasmussen | 720 434 6054 (cold calls are blocked, please text)
+<br> <a href="mailto:bluesillybeard2@gmail.com">bluesillybeard2@gmail.com</a> | <a href="https://bluesillybeard.github.io">bluesillybeard.github.io</a></strong>
+</p>
+</h3>
+<!--The flexbox layout has three elements:
+main container: this is the size of the document
+Left container, right container-->
+<!-- Main container -->
+<div style="display:flex; border-top:solid; flex-direction:row;">
+<!-- Left container -->
+<div style="margin:10pt; flex-grow:1; margin-top:-10pt; margin-right:0">
+<h4 id="red-rocks-community-college-current">Red Rocks Community College (Current)</h4>
+<div style="margin-left:-1.5em">
+<ul>
+<li>GPA: 3.30</li>
+<li>Associates of Engineering Sciences
+<ul>
+<li>Expected graduation May 2026</li>
+</ul>
+</li>
+<li>Mines Academy Program
+<ul>
+<li>Will transfer to Mines on completion</li>
+</ul>
+</li>
+</ul>
+</div>
+<h4 id="peak-to-peak-charter-school-k-12---2010---23">Peak to Peak Charter School (K-12) - 2010 - 23</h4>
+<div style="margin-left:-1.5em">
+<ul>
+<li>GPA (weighted): 3.837</li>
+<li>SAT Score: 1340</li>
+<li>Dean's list - 2020 - 23</li>
+<li>AP Scholar with Honor - 2023</li>
+<li>Charles Babbage award for Computing - 23</li>
+<li>Computer Science Honor Society - 2021 - 23</li>
+<li>Technology Capstone - 2022 - 23</li>
+<li>AP computer science
+<ul>
+<li>AP score: 4</li>
+</ul>
+</li>
+<li>AP Calculus BC
+<ul>
+<li>AP score: 3</li>
+<li>Calculus AB Subscore: 4</li>
+</ul>
+</li>
+<li>AP Physics C: E&amp;M
+<ul>
+<li>AP score: 4</li>
+</ul>
+</li>
+<li>AP Physics C: Mechanics
+<ul>
+<li>AP score: 4</li>
+</ul>
+</li>
+<li>Data structures credit for UCCS</li>
+</ul>
+</div>
+<h4 id="personal-projects">Personal projects</h4>
+<div style="margin-left:-1.5em">
+<ul>
+<li><a href="https://bluesillybeard.itch.io/">Game jams</a> - 2022 - 2024
+<ul>
+<li>GMTK 2022 and 2023</li>
+<li>Acerola game jam 0</li>
+</ul>
+</li>
+<li><a href="https://www.curseforge.com/minecraft/mc-mods/almost-void-world">Generative Decay</a>
+<ul>
+<li>Minecraft mod modifies world generation</li>
+</ul>
+</li>
+<li><a href="https://github.com/bluesillybeard/Pinc2">Pinc</a> - 2024 - present
+<ul>
+<li>A low-level window &amp; graphics library</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- Middle area -->
+<div style="flex-grow:1; border-right:solid;">
+</div>
+<!-- Right container -->
+<div style="margin-bottom:10pt; margin-top:-10pt; margin-left: 5pt">
+<h4 id="experience">Experience</h4>
+<div style="margin-left:-1.5em">
+<ul>
+<li>Known as &quot;the IT guy&quot; among family</li>
+<li>Contributed to multiple open source projects
+<ul>
+<li><a href="https://github.com/Snektron/vulkan-zig/pull/127">Vulkan-Zig</a>, <a href="https://github.com/Kode/Kinc/pull/848">Kinc</a>, <a href="https://github.com/raysan5/raylib/pull/3417">Raylib</a>, and more</li>
+<li>C, C++, Vulkan, OpenGL</li>
+<li>Asynchronous Communication &amp; Collaboration</li>
+</ul>
+</li>
+<li>Ran a private Minecraft server - 2024
+<ul>
+<li>Headless Ubuntu, Headless Archlinux</li>
+<li>TPLink Web UI</li>
+</ul>
+</li>
+<li>Technology Capstone at Peak to Peak - 2023:
+<ul>
+<li>Built an AR puzzle game in a team of 5</li>
+<li>PHP for server-side, C# for client-side</li>
+<li>MySQL for database</li>
+<li>Taught team how to use Git</li>
+</ul>
+</li>
+<li>Customer Service at Domino's - 2023
+<ul>
+<li>Working with &amp; understanding clients</li>
+<li>Performed misc. tasks</li>
+</ul>
+</li>
+<li>Volunteer at Louisville Community Food Share - 2022
+<ul>
+<li>20 hours, customer service &amp; food sorting</li>
+</ul>
+</li>
+</ul>
+</div>
+<h4 id="skills">Skills</h4>
+<div style="margin-left:-1.5em">
+<ul>
+<li>Various office software</li>
+<li>Computer usage, Coding, Diagnosing, &amp; Building</li>
+<li>Structured &amp; Unstructured Learning</li>
+<li>Communication</li>
+<li>Structured planning</li>
+<li>Attention to detail &amp; getting it right</li>
+<li>Getting interested in any topic</li>
+</ul>
+</div>
+<h4 id="hobbies">Hobbies</h4>
+<div style="margin-left:-1.5em">
+<ul>
+<li>Biking &amp; Hiking</li>
+<li>Playing Board games</li>
+<li>Playing Video games</li>
+<li>Taking care of my cat</li>
+<li>Fixing things instead of buying new</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

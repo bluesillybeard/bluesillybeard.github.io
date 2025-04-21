@@ -7,6 +7,8 @@ body {
     --theme-background-color: black;
     --theme-box-color: rgb(32, 32, 32);
     --theme-box-outline: rgb(64, 64, 64);
+    --theme-link-color: #59afff;
+    --theme-visited-link-color: #ce85ff;
     background-color: var(--theme-background-color);
     color: var(--theme-color);
 }
@@ -16,14 +18,16 @@ body[theme="light"] {
     --theme-background-color: white;
     --theme-box-color: rgb(190, 190, 190);
     --theme-box-outline: rgb(179, 179, 179);
+    --theme-link-color: #0538e2;
+    --theme-visited-link-color: #a300cc;
 }
 
 a {
-    color: #59afff
+    color: var(--theme-link-color)
 }
 
 a:visited {
-    color: #ce85ff;
+    color: var(--theme-visited-link-color)
 }
 
 .topbar {
